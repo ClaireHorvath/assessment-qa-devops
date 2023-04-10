@@ -1,4 +1,4 @@
-const { Builder, Browser, By, until } = require("selenium-webdriver");
+const { Builder, Browser, By, until, Key } = require("selenium-webdriver");
 
 let driver;
 
@@ -15,20 +15,13 @@ describe("Duel Duo tests", () => {
     await driver.get("http://localhost:8000");
     await driver.wait(until.titleIs("Duel Duo"), 1000);
   });
-  test("", async () => {
+  test("Click 'draw' button to view all 5 bots", async () => {
     await driver.get("http://localhost:3000/");
-    await driver.
+    await driver.wait(until.titleIs("Duel Duo"), 1000);
+    await driver.findElement(By.id("draw")).click();
   });
-  test("", async () => {
-    await driver.get("http://localhost:3000/")
-    await
+  test("Clicking 'Add to Duo' adds chosen bot to duo", async () => {
+    await driver.get("http://localhost:3000/");
+    await driver.findElement(By.id("")).click();
   })
 });
-
-
-
-
-
-
-
-
